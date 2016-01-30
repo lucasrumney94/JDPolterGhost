@@ -306,7 +306,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490696, guid: fba5a0d25a2f4c44c85ace04fdf5fc94, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495186, guid: fba5a0d25a2f4c44c85ace04fdf5fc94, type: 2}
+      propertyPath: debugInputs
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fba5a0d25a2f4c44c85ace04fdf5fc94, type: 2}
@@ -761,6 +765,14 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1465923380}
+    - target: {fileID: 11425942, guid: 358e3330e319be747a9963efe24e28c4, type: 2}
+      propertyPath: rotationDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425942, guid: 358e3330e319be747a9963efe24e28c4, type: 2}
+      propertyPath: heightDamping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 358e3330e319be747a9963efe24e28c4, type: 2}
   m_IsPrefabParent: 0
