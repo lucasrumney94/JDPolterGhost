@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class InputManager : MonoBehaviour
@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 
     public GameObject player;
     public GameObject camera;
+    public PlayerMovement playerMovement;
 
     public string axisLeftRight = "LeftRight";
     public string axisForwardBack = "ForwardBack";
@@ -23,6 +24,7 @@ public class InputManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
         camera = GameObject.FindGameObjectWithTag(Tags.camera);
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -39,11 +41,11 @@ public class InputManager : MonoBehaviour
         movementVector.y = Input.GetAxis(axisUpDown);
         movementVector.z = Input.GetAxis(axisForwardBack);
 
-        //TODO: Pass movementVector to player
+        playerMovement.MovePlayer(movementVector);
 
         if (debugInputs)
         {
-            //Debug.Log(movementVector);
+            Debug.Log(movementVector);
         }
     }
 
@@ -57,7 +59,7 @@ public class InputManager : MonoBehaviour
 
         if (debugInputs)
         {
-            //Debug.Log(movementVector);
+            Debug.Log(movementVector);
         }
     }
 
