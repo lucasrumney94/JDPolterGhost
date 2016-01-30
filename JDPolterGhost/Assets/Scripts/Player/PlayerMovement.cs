@@ -27,8 +27,12 @@ public class PlayerMovement : MonoBehaviour
         player.GetComponent<Rigidbody>().AddRelativeForce(movementVector);
     }
 
+    /// <summary>
+    /// Rotates the Player around the Y-Axis
+    /// </summary>
+    /// <param name="yRotation">[-1,1] what EulerAngle rotation to apply</param>
     public void rotatePlayer(float yRotation)
     {
-
+        player.GetComponent<Rigidbody>()
     }
 }
