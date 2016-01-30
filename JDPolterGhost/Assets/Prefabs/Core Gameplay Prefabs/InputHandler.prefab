@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e7910e156fe2c4293bc8d7f9f3dc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugInputs: 1
+  debugInputs: 0
   player: {fileID: 0}
   camera: {fileID: 0}
   playerMovement: {fileID: 0}

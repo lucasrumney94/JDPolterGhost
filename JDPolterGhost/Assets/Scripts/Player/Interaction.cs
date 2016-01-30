@@ -43,7 +43,7 @@ public class Interaction : MonoBehaviour
 
         if(targetedInteractible = hit.transform.gameObject.GetComponent<InteractableObject>())
         {
-            Debug.Log(targetedInteractible.gameObject.name + " is the closest interactible!");
+            targetedInteractible.Highlight();
         }
     }
 }
