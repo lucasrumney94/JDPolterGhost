@@ -105,15 +105,18 @@ public class AIAgentBase : MonoBehaviour
     private void GoToBed()
     {
         agent.SetDestination(bed.transform.position);
+        //TODO: Implement animations and variable changes for this AI state
     }
 
     private void GoToEat()
     {
         agent.SetDestination(diningChair.transform.position);
+        //TODO: Implement animations and variable changes for this AI state
     }
 
     private void GoToDefault()
     {
         agent.SetDestination(defaultObject.transform.position);
+        //TODO: Implement animations and variable changes for this AI state
     }
 }

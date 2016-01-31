@@ -7,6 +7,9 @@ using System;
 /// </summary>
 public class Interaction : MonoBehaviour
 {
+    public float interactDistance = 2f;
+    public LayerMask interactMask = -1;
+
     public Camera mainCamera;
     public InteractableObject targetedInteractible;
 
@@ -39,10 +42,10 @@ public class Interaction : MonoBehaviour
         Vector3 cameraNormal = mainCamera.transform.forward;
         Ray interactRay = new Ray(cameraCenter, cameraNormal);
         
-        Physics.SphereCast(interactRay, sphereCastRadius, out hit);
 
-        if(targetedInteractible = hit.transform.gameObject.GetComponent<InteractableObject>())
+        if (Physics.SphereCast(interactRay, sphereCastRadius, out hit, interactDistance, interactMask))
         {
+            targetedInteractible = hit.transform.gameObject.GetComponent<InteractableObject>();
             targetedInteractible.Highlight();
         }
     }
