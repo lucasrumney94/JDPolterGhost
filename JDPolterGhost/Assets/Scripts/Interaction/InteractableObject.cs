@@ -8,6 +8,12 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class InteractableObject : MonoBehaviour
 {
+    //influence taken from the player to interact with this object
+    public int influenceCost = 1;
+
+    //minimum influence the player must have to interact with this object
+    public int influenceGate = 0;
+
 	public virtual void Highlight()
     {
         Debug.Log(gameObject.name + " is the closest interactible!");
