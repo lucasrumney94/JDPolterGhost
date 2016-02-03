@@ -51,6 +51,7 @@ ModelImporter:
     100086: floor_plan_Extrude_Cap_11
     100088: floor_plan_Extrude_Cap_2
     100090: //RootNode
+    100092: Extrude_1
     400000: floor_plan_Extrude
     400002: floor_plan_Extrude_1
     400004: floor_plan_Extrude_10
@@ -97,6 +98,7 @@ ModelImporter:
     400086: floor_plan_Extrude_Cap_11
     400088: floor_plan_Extrude_Cap_2
     400090: //RootNode
+    400092: Extrude_1
     2300000: floor_plan_Extrude
     2300002: floor_plan_Extrude_1
     2300004: floor_plan_Extrude_10
@@ -142,6 +144,7 @@ ModelImporter:
     2300084: floor_plan_Extrude_9_Cap_29
     2300086: floor_plan_Extrude_Cap_11
     2300088: floor_plan_Extrude_Cap_2
+    2300090: Extrude_1
     3300000: floor_plan_Extrude
     3300002: floor_plan_Extrude_1
     3300004: floor_plan_Extrude_10
@@ -187,6 +190,7 @@ ModelImporter:
     3300084: floor_plan_Extrude_9_Cap_29
     3300086: floor_plan_Extrude_Cap_11
     3300088: floor_plan_Extrude_Cap_2
+    3300090: Extrude_1
     4300000: floor_plan_Extrude
     4300002: floor_plan_Extrude_1
     4300004: floor_plan_Extrude_10
@@ -232,6 +236,7 @@ ModelImporter:
     4300084: floor_plan_Extrude_9_Cap_29
     4300086: floor_plan_Extrude_Cap_11
     4300088: floor_plan_Extrude_Cap_2
+    4300090: Extrude_1
   materials:
     importMaterials: 1
     materialName: 0
