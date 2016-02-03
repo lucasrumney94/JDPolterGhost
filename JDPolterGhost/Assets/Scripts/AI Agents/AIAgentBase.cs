@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 /// <summary>
-/// Base class for all NPCs; handles setting destinations for agents based on time of day, and contains functions for actions common to all NPCs
-/// (eating, sleeping, etc.)
+/// Base class for all NPCs; allows you to set a schedule 
 /// All floats in #Schedule should strictly increase going down the list
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
@@ -10,32 +9,17 @@ public class AIAgentBase : MonoBehaviour
 {
     public bool spooked = false;
 
-    #region Schedule
+    //Location of bed and sleeping hours, unlike other ScheduleItems endTime should be BEFORE startTime
+    public ScheduleItem sleep;
 
-    public float wakeuptime;
+    //List of objects and times for the agent to visit through the day
+    public ScheduleItem[] schedule;
 
-    public float breakfastStartTime;
-    public float breakfastEndTime;
+    //List of objects for the agent to visit at random between schedule items
+    public GameObject[] miscLocations;
 
-    public float lunchStartTime;
-    public float lunchEndTime;
-
-    public float dinnerStartTime;
-    public float dinnerEndTime;
-
-    public float bedtime;
-
-    #endregion
-
-    #region Locations
-
-    public GameObject bed;
-
-    public GameObject diningChair;
-
-    public GameObject defaultObject;
-
-    #endregion
+    //Has the agent determined what to do during its schedule gap?
+    private bool selectedFreeTimeLocation;
 
     private NavMeshAgent agent;
 
@@ -52,71 +36,60 @@ public class AIAgentBase : MonoBehaviour
     }
 
     /// <summary>
-    /// Makes sure that the given times are ordered correctly
-    /// These things should always be true:
-    /// -bedtime is the latest time in the list
-    /// -wakeuptime is the earliest time in the list
-    /// -all meals are ordered correctly
-    /// -all mealStartTimes come before their respective mealEndTimes
+    /// Makes sure that the schedule is ordered correctly
+    /// All start times in schedule should be less than the following end time, and no ranges should overlap
+    /// Sleep times are the exception to this, sleep.startTime should be the latest schedule time in the day
+    /// and sleep.endTime should be the earliest
     /// 
     /// These actions will always take precedence over inherited class actions, so their ordering is not importaint
     /// </summary>
     private void AssertTimeOrder()
     {
-        Debug.Assert(wakeuptime < breakfastStartTime, gameObject);
-        Debug.Assert(breakfastStartTime < breakfastEndTime, gameObject);
-        Debug.Assert(breakfastEndTime < lunchStartTime, gameObject);
-        Debug.Assert(lunchStartTime < lunchEndTime, gameObject);
-        Debug.Assert(lunchEndTime < dinnerStartTime, gameObject);
-        Debug.Assert(dinnerStartTime < dinnerEndTime, gameObject);
-        Debug.Assert(dinnerEndTime < bedtime, gameObject);
+        float previousEndTime = sleep.endTime;
+        for(int i = 0; i < schedule.Length; i++)
+        {
+            Debug.Assert(previousEndTime < schedule[i].startTime, "Check that your schedule times don't overlap!", gameObject);
+            Debug.Assert(schedule[i].startTime < schedule[i].endTime, "Check that your schedule doesn't have any negative duration items!", gameObject);
+        }
+        Debug.Assert(schedule[schedule.Length - 1].endTime < sleep.startTime, "Check that sleep start time is the latest time in your schedule!");
     }
 
     private void DetermineActivityByTime()
     {
-        //TODO: Switch statement for finding agent destination
         float time = GameTime.TimeOfDay();
 
         if (spooked == false)
         {
-            if (bedtime < time || time < wakeuptime)
+            if((sleep.startTime < time) || (time < sleep.endTime))
             {
                 GoToBed();
+                return;
             }
-            else if (breakfastStartTime < time && time < breakfastEndTime)
+            for(int i = 0; i < schedule.Length; i++)
             {
-                GoToEat();
+                if (schedule[i].startTime < time && time < schedule[i].endTime)
+                {
+                    selectedFreeTimeLocation = false;
+                    agent.SetDestination(schedule[i].location.transform.position);
+                    return;
+                }
             }
-            else if (lunchStartTime < time && time < lunchEndTime)
+            if (selectedFreeTimeLocation == false)
             {
-                GoToEat();
-            }
-            else if (dinnerStartTime < time && time < dinnerEndTime)
-            {
-                GoToEat();
-            }
-            else
-            {
-                GoToDefault();
+                if (miscLocations.Length > 0)
+                {
+                    selectedFreeTimeLocation = true;
+                    int location = Random.Range(0, miscLocations.Length);
+                    Debug.Log("Heading to misc location " + location);
+                    agent.SetDestination(miscLocations[location].transform.position);
+                }
             }
         }
     }
 
     private void GoToBed()
     {
-        agent.SetDestination(bed.transform.position);
-        //TODO: Implement animations and variable changes for this AI state
-    }
-
-    private void GoToEat()
-    {
-        agent.SetDestination(diningChair.transform.position);
-        //TODO: Implement animations and variable changes for this AI state
-    }
-
-    private void GoToDefault()
-    {
-        agent.SetDestination(defaultObject.transform.position);
+        agent.SetDestination(sleep.location.transform.position);
         //TODO: Implement animations and variable changes for this AI state
     }
 }

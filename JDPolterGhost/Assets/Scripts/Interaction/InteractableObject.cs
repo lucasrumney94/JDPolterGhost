@@ -8,6 +8,9 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class InteractableObject : MonoBehaviour
 {
+    //is the player using the object?
+    public bool haunted;
+
     //influence taken from the player to interact with this object
     public int influenceCost = 1;
 

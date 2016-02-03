@@ -6,7 +6,7 @@ public class InputManager : MonoBehaviour
     public bool debugInputs;
 
     public GameObject player;
-    public cameraController camera;
+    public cameraController mainCamera;
     public PlayerMovement playerMovement;
 
     public string axisLeftRight = "LeftRight";
@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
-        camera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<cameraController>();
+        mainCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<cameraController>();
         playerMovement = player.GetComponent<PlayerMovement>();
     }
 
@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
 
         //TODO: Pass vertical movement to camera, and horizontal movement to player
         playerMovement.rotatePlayer(movementVector.x);
-        camera.changeElevation(movementVector.y);
+        mainCamera.changeElevation(movementVector.y);
 
         if (debugInputs)
         {
