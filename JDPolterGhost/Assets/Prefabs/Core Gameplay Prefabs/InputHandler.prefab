@@ -41,11 +41,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugInputs: 0
   player: {fileID: 0}
-  camera: {fileID: 0}
+  playerCamera: {fileID: 0}
   playerMovement: {fileID: 0}
   axisLeftRight: LeftRight
   axisForwardBack: ForwardBack
   axisUpDown: UpDown
+  invertCamera: 0
+  camHorizontalSensitivity: 2
+  camVerticalSensitivity: 2
   camLeftRight: CamLeftRight
   camUpDown: CamUpDown
   interact1: Interact1
