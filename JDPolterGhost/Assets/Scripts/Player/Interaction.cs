@@ -41,12 +41,17 @@ public class Interaction : MonoBehaviour
         Vector3 cameraCenter = mainCamera.transform.position;
         Vector3 cameraNormal = mainCamera.transform.forward;
         Ray interactRay = new Ray(cameraCenter, cameraNormal);
-        
+        Debug.DrawLine(interactRay.origin, interactRay.origin + interactRay.direction);
+
 
         if (Physics.SphereCast(interactRay, sphereCastRadius, out hit, interactDistance, interactMask))
         {
             targetedInteractible = hit.transform.gameObject.GetComponent<InteractableObject>();
             targetedInteractible.Highlight();
+        }
+        else
+        {
+            targetedInteractible = null;
         }
     }
 }

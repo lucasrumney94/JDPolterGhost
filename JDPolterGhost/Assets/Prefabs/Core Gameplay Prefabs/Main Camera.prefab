@@ -94,6 +94,9 @@ MonoBehaviour:
   cameraDistance: 2
   currentLongitude: 0
   currentLatitude: 0
+  followAnchor: 0
+  anchor: {fileID: 0}
+  anchorDistance: {x: 0.4, y: 0.6, z: 0}
 --- !u!124 &12448088
 Behaviour:
   m_ObjectHideFlags: 1

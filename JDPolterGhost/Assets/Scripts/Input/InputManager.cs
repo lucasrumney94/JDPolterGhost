@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     public GameObject player;
     public PlayerCamera playerCamera;
     public PlayerMovement playerMovement;
+    public Interaction playerInteraction;
 
     public string axisLeftRight = "LeftRight";
     public string axisForwardBack = "ForwardBack";
@@ -30,6 +31,7 @@ public class InputManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag(Tags.player);
         playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        playerInteraction = player.GetComponent<Interaction>();
     }
 
     void Update()
@@ -78,6 +80,7 @@ public class InputManager : MonoBehaviour
         {
             interact1Held = true;
             //TODO: Pass interact to player
+            playerInteraction.InteractWithTarget();
 
             if (debugInputs)
             {
