@@ -175,10 +175,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!4 &296785792 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 417274, guid: 7383c019b82a3ff43b673f93d2aa38c2, type: 2}
-  m_PrefabInternal: {fileID: 1040928580}
 --- !u!1 &445995814
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +411,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11495186, guid: fba5a0d25a2f4c44c85ace04fdf5fc94, type: 2}
+      propertyPath: camVerticalSensitivity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fba5a0d25a2f4c44c85ace04fdf5fc94, type: 2}
   m_IsPrefabParent: 0
@@ -480,33 +480,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7383c019b82a3ff43b673f93d2aa38c2, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1162239338
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1162239339}
-  m_Layer: 0
-  m_Name: Camera Follow Anchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1162239339
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162239338}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 296785792}
-  m_RootOrder: 0
 --- !u!1 &1561637973
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +758,7 @@ Prefab:
     - target: {fileID: 11401028, guid: 358e3330e319be747a9963efe24e28c4, type: 2}
       propertyPath: anchor
       value: 
-      objectReference: {fileID: 1162239338}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 358e3330e319be747a9963efe24e28c4, type: 2}
   m_IsPrefabParent: 0

@@ -12,8 +12,8 @@ public class PlayerCamera : MonoBehaviour
     public float currentLatitude = 0;
     private float targetLatitude;
 
-    public bool followAnchor;
-    public GameObject anchor;
+    public float verticalAngleLimit = 80f;
+
     public Vector3 anchorDistance; //Distance of the camera center of rotation from the player
 
     private GameObject player;
@@ -35,7 +35,7 @@ public class PlayerCamera : MonoBehaviour
     /// <param name="angleY">Latitudal delta</param>
     private void OrbitCamera(float angleX, float angleY)
     {
-        targetLatitude = Mathf.Clamp(currentLatitude + angleY, Mathf.Deg2Rad * -85f, Mathf.Deg2Rad * 85f);
+        targetLatitude = Mathf.Clamp(currentLatitude + angleY, Mathf.Deg2Rad * -verticalAngleLimit, Mathf.Deg2Rad * verticalAngleLimit);
         targetLongitude = currentLongitude + angleX;
 
         Vector3 orbitCenter;

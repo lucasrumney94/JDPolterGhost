@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveVelocity(Vector3 movementVector)
     {
-        playerRigidbody.velocity = transform.TransformVector(movementVector) * speed;
+        playerRigidbody.velocity = transform.TransformVector(movementVector).normalized * speed;
     }
 
     private void RotateToCamera()
