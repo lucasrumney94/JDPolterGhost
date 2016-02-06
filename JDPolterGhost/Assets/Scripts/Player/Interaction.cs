@@ -7,49 +7,80 @@ using System;
 /// </summary>
 public class Interaction : MonoBehaviour
 {
-    public float interactDistance = 2f;
+    public float influence = 0f;
     public LayerMask interactMask = -1;
 
-    public Camera mainCamera;
     public InteractableObject targetedInteractible;
+    public bool hauntingObject;
+
+    private PlayerCamera playerCamera;
+    private Collider playerCollider;
+
+    private MeshRenderer playerMesh;
+    private PlayerMovement playerMovement;
 
     public float sphereCastRadius;
 
 	void Start()
     {
-        mainCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<Camera>();
+        playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
+        playerCollider = GetComponent<Collider>();
+        playerMesh = GetComponent<MeshRenderer>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
-        InteractSphereCast();
+        //InteractSphereCast();
     }
 
     public void InteractWithTarget()
     {
         if(targetedInteractible != null)
         {
-            Debug.Log(targetedInteractible.gameObject.name + " was interacted with!");
-            //Determine the kind of interactable, then use a switch statement to call the appropriate function
+            if (hauntingObject == false)
+            {
+                if (influence >= targetedInteractible.influenceGate)
+                {
+                    Debug.Log(targetedInteractible.gameObject.name + " was interacted with!");
+                    hauntingObject = true;
+                    targetedInteractible.haunted = true;
+                    playerMesh.enabled = false;
+                    transform.position = targetedInteractible.transform.position; 
+                }
+            }
+            else if(hauntingObject == true)
+            {
+                hauntingObject = false;
+                targetedInteractible.haunted = false;
+                playerMesh.enabled = true;
+            }
         }
     }
 
-    private void InteractSphereCast()
+    public void ActivateTarget()
     {
-        RaycastHit hit = new RaycastHit();
-
-        Vector3 cameraCenter = mainCamera.transform.position;
-        Vector3 cameraNormal = mainCamera.transform.forward;
-        Ray interactRay = new Ray(cameraCenter, cameraNormal);
-        Debug.DrawLine(interactRay.origin, interactRay.origin + interactRay.direction);
-
-
-        if (Physics.SphereCast(interactRay, sphereCastRadius, out hit, interactDistance, interactMask))
+        if(hauntingObject == true)
         {
-            targetedInteractible = hit.transform.gameObject.GetComponent<InteractableObject>();
-            targetedInteractible.Highlight();
+            if(influence > targetedInteractible.influenceCost)
+            {
+                targetedInteractible.Activate();
+            }
         }
-        else
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == Tags.interactable)
+        {
+            targetedInteractible = other.GetComponent<InteractableObject>();
+            //TODO: Trigger a graphical effect for the highlighted object
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == Tags.interactable)
         {
             targetedInteractible = null;
         }
