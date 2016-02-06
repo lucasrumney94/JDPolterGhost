@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TableWood
+  m_Name: dadPants
   m_Shader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
-  m_LightmapFlags: 1
+  m_LightmapFlags: 5
   m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
@@ -19,8 +19,8 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: a461a34fa240d4c778c7e05e327573da, type: 3}
-          m_Scale: {x: 3.26999998, y: 1.66999996}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -146,4 +146,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .242647052, g: .178687647, b: .0410358943, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
