@@ -6,19 +6,13 @@ public class InputManager : MonoBehaviour
     public bool debugInputs;
 
     public GameObject player;
-    public PlayerCamera playerCamera;
+    public cameraController mainCamera;
     public PlayerMovement playerMovement;
-    public Interaction playerInteraction;
 
     public string axisLeftRight = "LeftRight";
     public string axisForwardBack = "ForwardBack";
     public string axisUpDown = "UpDown";
 
-    public bool invertCamera;
-    [Range(0.1f, 10f)]
-    public float camHorizontalSensitivity = 1f;
-    [Range(0.1f, 10f)]
-    public float camVerticalSensitivity = 1f;
     public string camLeftRight = "CamLeftRight";
     public string camUpDown = "CamUpDown";
 
@@ -29,9 +23,8 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
-        playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
+        mainCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<cameraController>();
         playerMovement = player.GetComponent<PlayerMovement>();
-        playerInteraction = player.GetComponent<Interaction>();
     }
 
     void Update()
@@ -59,12 +52,12 @@ public class InputManager : MonoBehaviour
     private void MoveCamera()
     {
         Vector3 movementVector = Vector3.zero;
-        movementVector.x = Input.GetAxis(camLeftRight) * camHorizontalSensitivity;
-        movementVector.y = Input.GetAxis(camUpDown) * camVerticalSensitivity * (invertCamera ? 1f : -1f);
+        movementVector.x = Input.GetAxis(camLeftRight);
+        movementVector.y = Input.GetAxis(camUpDown);
 
         //TODO: Pass vertical movement to camera, and horizontal movement to player
-        //playerMovement.rotatePlayer(movementVector.x);
-        playerCamera.MoveCamera(movementVector);
+        playerMovement.rotatePlayer(movementVector.x);
+        mainCamera.changeElevation(movementVector.y);
 
         if (debugInputs)
         {
@@ -80,7 +73,6 @@ public class InputManager : MonoBehaviour
         {
             interact1Held = true;
             //TODO: Pass interact to player
-            playerInteraction.InteractWithTarget();
 
             if (debugInputs)
             {

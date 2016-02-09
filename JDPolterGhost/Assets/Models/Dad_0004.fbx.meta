@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 4166e9aad576b4781b1746ae96de5430
+timeCreated: 1454775623
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube_1
+    100004: Cube_1_2
+    100006: Cube_2
+    100008: Cube_2_2
+    100010: Cube_2_3
+    100012: Cube_3
+    100014: Cube_3_2
+    100016: Cube_3_3
+    100018: Cylinder
+    100020: Dad
+    100022: //RootNode
+    100024: Disc
+    100026: Head
+    100028: leg
+    100030: leg_2
+    100032: Subdivision_Surface
+    100034: Subdivision_Surface_2
+    100036: Subdivision_Surface_3
+    100038: Symmetry_2
+    100040: Watch
+    400000: Cube
+    400002: Cube_1
+    400004: Cube_1_2
+    400006: Cube_2
+    400008: Cube_2_2
+    400010: Cube_2_3
+    400012: Cube_3
+    400014: Cube_3_2
+    400016: Cube_3_3
+    400018: Cylinder
+    400020: Dad
+    400022: //RootNode
+    400024: Disc
+    400026: Head
+    400028: leg
+    400030: leg_2
+    400032: Subdivision_Surface
+    400034: Subdivision_Surface_2
+    400036: Subdivision_Surface_3
+    400038: Symmetry_2
+    400040: Watch
+    2300000: Cube
+    2300002: Cube_1
+    2300004: Cube_1_2
+    2300006: Cube_2
+    2300008: Cube_2_2
+    2300010: Cube_2_3
+    2300012: Cube_3
+    2300014: Cube_3_2
+    2300016: Cube_3_3
+    2300018: Cylinder
+    2300020: Disc
+    2300022: Head
+    2300024: leg_2
+    2300026: Watch
+    3300000: Cube
+    3300002: Cube_1
+    3300004: Cube_1_2
+    3300006: Cube_2
+    3300008: Cube_2_2
+    3300010: Cube_2_3
+    3300012: Cube_3
+    3300014: Cube_3_2
+    3300016: Cube_3_3
+    3300018: Cylinder
+    3300020: Disc
+    3300022: Head
+    3300024: leg_2
+    3300026: Watch
+    4300000: Head
+    4300002: Disc
+    4300004: Watch
+    4300006: Cylinder
+    4300008: Cube_3
+    4300010: Cube_3_2
+    4300012: Cube_2
+    4300014: Cube
+    4300016: Cube_1
+    4300018: leg_2
+    4300020: Cube_2_2
+    4300022: Cube_2_3
+    4300024: Cube_1_2
+    4300026: Cube_3_3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
