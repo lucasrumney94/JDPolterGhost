@@ -80,9 +80,12 @@ public class Interaction : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.tag == Tags.interactable)
+        if (hauntingObject == false)
         {
-            targetedInteractible = null;
+            if (other.tag == Tags.interactable)
+            {
+                targetedInteractible = null;
+            }
         }
     }
 }
