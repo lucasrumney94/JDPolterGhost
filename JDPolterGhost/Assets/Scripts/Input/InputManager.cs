@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     public string camUpDown = "CamUpDown";
 
     public string interact1 = "Interact1";
+    public string activate1 = "Activate1";
 
     public bool interact1Held = false;
 
@@ -29,9 +30,15 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
+        CheckInputs();
+    }
+
+    private void CheckInputs()
+    {
         Moveplayer();
         MoveCamera();
         Interact();
+        Activate();
     }
 
     private void Moveplayer()
@@ -83,6 +90,15 @@ public class InputManager : MonoBehaviour
         if(interactValue < 0.1f)
         {
             interact1Held = false;
+        }
+    }
+
+    private void Activate()
+    {
+        float activateValue = Input.GetAxis(activate1);
+        if(activateValue > 0.1)
+        {
+            playerInteraction.ActivateTarget();
         }
     }
 }
