@@ -6,39 +6,39 @@ public class InputManager : MonoBehaviour
     public bool debugInputs;
 
     public GameObject player;
-    public cameraController mainCamera;
+    public PlayerCamera playerCamera;
     public PlayerMovement playerMovement;
+    public Interaction playerInteraction;
 
     public string axisLeftRight = "LeftRight";
     public string axisForwardBack = "ForwardBack";
     public string axisUpDown = "UpDown";
 
+    public bool invertCamera;
+    [Range(0.1f, 10f)]
+    public float camHorizontalSensitivity = 1f;
+    [Range(0.1f, 10f)]
+    public float camVerticalSensitivity = 1f;
     public string camLeftRight = "CamLeftRight";
     public string camUpDown = "CamUpDown";
 
     public string interact1 = "Interact1";
-    public string activate1 = "Activate1";
 
     public bool interact1Held = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
-        mainCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<cameraController>();
+        playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        playerInteraction = player.GetComponent<Interaction>();
     }
 
     void Update()
     {
-        CheckInputs();
-    }
-
-    private void CheckInputs()
-    {
         Moveplayer();
         MoveCamera();
         Interact();
-        Activate();
     }
 
     private void Moveplayer()
@@ -59,12 +59,12 @@ public class InputManager : MonoBehaviour
     private void MoveCamera()
     {
         Vector3 movementVector = Vector3.zero;
-        movementVector.x = Input.GetAxis(camLeftRight);
-        movementVector.y = Input.GetAxis(camUpDown);
+        movementVector.x = Input.GetAxis(camLeftRight) * camHorizontalSensitivity;
+        movementVector.y = Input.GetAxis(camUpDown) * camVerticalSensitivity * (invertCamera ? 1f : -1f);
 
         //TODO: Pass vertical movement to camera, and horizontal movement to player
-        playerMovement.rotatePlayer(movementVector.x);
-        mainCamera.changeElevation(movementVector.y);
+        //playerMovement.rotatePlayer(movementVector.x);
+        playerCamera.MoveCamera(movementVector);
 
         if (debugInputs)
         {
@@ -80,6 +80,7 @@ public class InputManager : MonoBehaviour
         {
             interact1Held = true;
             //TODO: Pass interact to player
+            playerInteraction.InteractWithTarget();
 
             if (debugInputs)
             {
@@ -90,15 +91,6 @@ public class InputManager : MonoBehaviour
         if(interactValue < 0.1f)
         {
             interact1Held = false;
-        }
-    }
-
-    private void Activate()
-    {
-        float activateValue = Input.GetAxis(activate1);
-        if(activateValue > 0.1)
-        {
-            playerInteraction.ActivateTarget();
         }
     }
 }
