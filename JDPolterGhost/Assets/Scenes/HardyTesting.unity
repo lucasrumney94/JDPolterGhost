@@ -616,6 +616,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1040928583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040928581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69063545d88446f290fda2f3fe04b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  influence: 1000
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 256
+  targetedInteractible: {fileID: 0}
+  hauntingObject: 0
+  sphereCastRadius: 0
 --- !u!1 &1141201155 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 132928, guid: 9fd6120817d71477db268a2d810c27ff, type: 2}
