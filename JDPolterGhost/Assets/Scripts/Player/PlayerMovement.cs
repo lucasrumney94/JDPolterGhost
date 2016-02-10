@@ -8,27 +8,22 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     public static GameObject player;
+    public GameObject playerCamera;
 
+    public bool forceMovement = false;
     public float speed = 5.0f;
-<<<<<<< HEAD
-=======
     [Range(0f, 1f)]
     public float rotationSpeed = 0.1f;
 
     private Rigidbody playerRigidbody;
     private Interaction playerInteraction;
->>>>>>> 7ef62bfb219949fe5f7b4fa747d48fb33275fd7a
 
     void Start()
     {
         player = this.gameObject;
-<<<<<<< HEAD
-
-=======
         playerCamera = GameObject.FindGameObjectWithTag(Tags.camera);
         playerRigidbody = GetComponent<Rigidbody>();
         playerInteraction = GetComponent<Interaction>();
->>>>>>> 7ef62bfb219949fe5f7b4fa747d48fb33275fd7a
     }
     
     /// <summary>
@@ -37,9 +32,6 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="movementVector">Direction of movement</param>
     public void MovePlayer(Vector3 movementVector)
     {
-<<<<<<< HEAD
-        player.GetComponent<Rigidbody>().AddRelativeForce(movementVector);
-=======
         if (playerInteraction.hauntingObject == false)
         {
             if (forceMovement) MoveForce(movementVector);
@@ -69,6 +61,5 @@ public class PlayerMovement : MonoBehaviour
     private void RotateToCamera()
     {
         player.transform.rotation = Quaternion.Slerp(transform.rotation, playerCamera.transform.rotation, rotationSpeed);
->>>>>>> 7ef62bfb219949fe5f7b4fa747d48fb33275fd7a
     }
 }
