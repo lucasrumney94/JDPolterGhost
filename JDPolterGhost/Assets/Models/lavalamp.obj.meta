@@ -7,11 +7,31 @@ ModelImporter:
   fileIDToRecycleName:
     100000: default
     100002: //RootNode
+    100004: Lavalamp_base
+    100006: Lavalamp_glass
+    100008: Lavalamp_lava1
+    100010: Lavalamp_lava2
     400000: default
     400002: //RootNode
+    400004: Lavalamp_base
+    400006: Lavalamp_glass
+    400008: Lavalamp_lava1
+    400010: Lavalamp_lava2
     2300000: default
+    2300002: Lavalamp_base
+    2300004: Lavalamp_glass
+    2300006: Lavalamp_lava1
+    2300008: Lavalamp_lava2
     3300000: default
+    3300002: Lavalamp_base
+    3300004: Lavalamp_glass
+    3300006: Lavalamp_lava1
+    3300008: Lavalamp_lava2
     4300000: default
+    4300002: Lavalamp_base
+    4300004: Lavalamp_glass
+    4300006: Lavalamp_lava1
+    4300008: Lavalamp_lava2
   materials:
     importMaterials: 1
     materialName: 0
