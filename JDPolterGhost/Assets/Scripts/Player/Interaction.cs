@@ -18,6 +18,7 @@ public class Interaction : MonoBehaviour
 
     private MeshRenderer playerMesh;
     private PlayerMovement playerMovement;
+    private NavMeshObstacle playerObstacle;
 
     public float sphereCastRadius;
 

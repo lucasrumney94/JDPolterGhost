@@ -8,7 +8,7 @@ using System.Collections;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIAgentBase : MonoBehaviour
 {
-    public bool spooked = false; //Has the agent seen anything strange in the last 2 seconds?
+    public bool spooked = false; //Has the agent been scared this frame?
 
     public int fearLevel = 0;
     public int maxFearLevel = 1000;
@@ -24,20 +24,29 @@ public class AIAgentBase : MonoBehaviour
 
     public GameObject[] miscLocations; //List of objects for the agent to visit at random between schedule items
 
+    public GameObject[] safeLocations; //List of objects for the agent to flee to when their panic maxes out; will pick the object which is farthest from the player
+
     private bool selectedFreeTimeLocation; //Has the agent determined what to do during its schedule gap?
 
     private NavMeshAgent agent;
+    private GameObject player;
 
     void Start()
     {
         //Check to see if times are in the correct range and order
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag(Tags.player);
         AssertTimeOrder();
     }
 
     void Update()
     {
         DetermineActivityByTime();
+    }
+
+    void LateUpdate()
+    {
+        spooked = false;
     }
 
     /// <summary>
@@ -53,10 +62,10 @@ public class AIAgentBase : MonoBehaviour
         float previousEndTime = sleep.endTime;
         for(int i = 0; i < schedule.Length; i++)
         {
-            Debug.Assert(previousEndTime < schedule[i].startTime, "Check that your schedule times don't overlap!", gameObject);
-            Debug.Assert(schedule[i].startTime < schedule[i].endTime, "Check that your schedule doesn't have any negative duration items!", gameObject);
+            Debug.Assert(previousEndTime <= schedule[i].startTime, "Check that your schedule times don't overlap!", gameObject);
+            Debug.Assert(schedule[i].startTime <= schedule[i].endTime, "Check that your schedule doesn't have any negative duration items!", gameObject);
         }
-        Debug.Assert(schedule[schedule.Length - 1].endTime < sleep.startTime, "Check that sleep start time is the latest time in your schedule!");
+        Debug.Assert(schedule[schedule.Length - 1].endTime <= sleep.startTime, "Check that sleep start time is the latest time in your schedule!");
     }
 
     private void DetermineActivityByTime()
@@ -105,16 +114,34 @@ public class AIAgentBase : MonoBehaviour
         agent.Stop();
         Debug.Log("Agent stopped to look at a haunted object!");
         yield return new WaitForSeconds(2f);
-
-        spooked = false;
-        agent.Resume();
-        Debug.Log("Agent resumed moving!");
+        
+        if(spooked == false)
+        {
+            agent.Resume();
+            Debug.Log("Agent resumed moving!");
+        }
     }
 
     private void Panic()
     {
         agent.Resume();
-        GoToBed();
+
+        //Finds the safeLocation which is farthest from the player
+        Vector3 safeDestination = Vector3.zero;
+        float farthestDistance = 0f;
+        for(int i = 0; i < safeLocations.Length; i++)
+        {
+            float newDistance = Vector3.Distance(player.transform.position, safeLocations[i].transform.position);
+            if (newDistance > farthestDistance)
+            {
+                farthestDistance = newDistance;
+                safeDestination = safeLocations[i].transform.position;
+            }
+        }
+
+        agent.SetDestination(safeDestination);
+
+        //Begin reducing panic after 5 seconds
         if(IsInvoking("ReducePanicLevel") == false)
         {
             InvokeRepeating("ReducePanicLevel", 5f, 1f);
@@ -168,6 +195,7 @@ public class AIAgentBase : MonoBehaviour
                     if (hit.transform.tag == Tags.interactable)
                     {
                         ScareAgent(interactable);
+                        return;
                     }
                 }
             }
