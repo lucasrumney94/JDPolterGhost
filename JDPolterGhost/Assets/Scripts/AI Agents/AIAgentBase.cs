@@ -26,6 +26,8 @@ public class AIAgentBase : MonoBehaviour
 
     public GameObject[] safeLocations; //List of objects for the agent to flee to when their panic maxes out; will pick the object which is farthest from the player
 
+    public GameObject exitLocation; //GameObject for the agent to travel to once their fear has capped out
+
     private bool selectedFreeTimeLocation; //Has the agent determined what to do during its schedule gap?
 
     private NavMeshAgent agent;

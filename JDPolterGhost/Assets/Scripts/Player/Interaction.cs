@@ -65,7 +65,10 @@ public class Interaction : MonoBehaviour
         {
             if (influence > targetedInteractible.influenceCost)
             {
-                targetedInteractible.Activate();
+                if (targetedInteractible.Activate())
+                {
+                    influence -= targetedInteractible.influenceCost;
+                }
             }
         }
     }

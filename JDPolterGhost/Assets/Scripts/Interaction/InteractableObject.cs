@@ -55,12 +55,17 @@ public class InteractableObject : MonoBehaviour
         //TODO: Apply some graphical effect to show the object is being interacted with
     }
 
-    public virtual void Activate()
+    /// <summary>
+    /// Returns if the object was successfully activated or not
+    /// </summary>
+    /// <returns></returns>
+    public virtual bool Activate()
     {
         if(Time.time - lastActivationTime > timeout)
         {
             Debug.Log("Actibated the base class interaction! Maybe you forgot to implement an override for your behavior?");
             lastActivationTime = Time.time;
         }
+        return false;
     }
 }

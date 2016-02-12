@@ -12,13 +12,15 @@ public class InteractRattle : InteractableObject
         initialPosition = transform.position;
     }
 
-    public override void Activate()
+    public override bool Activate()
     {
         if (spookey == false)
         {
             StartCoroutine(Rattle());
             lastActivationTime = Time.time; //Depreciated for this behavior; left in for testing
+            return true;
         }
+        return false;
     }
 
     private IEnumerator Rattle()
