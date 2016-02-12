@@ -217,6 +217,7 @@ public class AIAgentBase : MonoBehaviour
         int addedFear = hauntedObject.ScareNPC(this);
         fearLevel += addedFear;
         panicLevel += addedFear;
+        player.GetComponent<Interaction>().influence += addedFear;
         spooked = true;
         transform.LookAt(hauntedObject.transform);
         transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
