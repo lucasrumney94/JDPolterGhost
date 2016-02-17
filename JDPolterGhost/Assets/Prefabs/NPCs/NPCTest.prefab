@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 488126}
   - 33: {fileID: 3336220}
-  - 65: {fileID: 6575776}
   - 23: {fileID: 2377926}
   m_Layer: 0
   m_Name: Cube
@@ -47,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.06, y: 1, z: 5.27}
+  m_LocalPosition: {x: 0.15, y: 1, z: -14.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488126}
@@ -146,18 +145,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6575776
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100610}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11487162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,17 +159,29 @@ MonoBehaviour:
   spooked: 0
   fearLevel: 0
   maxFearLevel: 1000
-  viewConeAngle: 90
+  panicLevel: 0
+  MaxPanicLevel: 50
+  viewConeAngle: 200
+  eyeHeight: 0.5
   sleep:
     location: {fileID: 0}
-    startTime: 22
-    endTime: 6
+    startTime: 21
+    endTime: 3
   schedule:
   - location: {fileID: 0}
-    startTime: 8
-    endTime: 10
-  miscLocations:
+    startTime: 3
+    endTime: 9
+  - location: {fileID: 0}
+    startTime: 9
+    endTime: 15
+  - location: {fileID: 0}
+    startTime: 15
+    endTime: 21
+  miscLocations: []
+  safeLocations:
   - {fileID: 0}
+  - {fileID: 0}
+  exitLocation: {fileID: 0}
 --- !u!135 &13547892
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -216,7 +215,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 141802}
   m_Enabled: 1
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

@@ -5,7 +5,7 @@ using System.Collections;
 /// Base class for all NPCs; allows you to set a schedule 
 /// All floats in #Schedule should strictly increase going down the list
 /// </summary>
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody))]
 public class AIAgentBase : MonoBehaviour
 {
     public bool spooked = false; //Has the agent been scared this frame?
@@ -17,6 +17,7 @@ public class AIAgentBase : MonoBehaviour
     public int MaxPanicLevel = 50; //Once panic reaches this breakpoint the agent will flee to a safe distance (need help with determining this behavior exactly, for now just runs to bed)
 
     public float viewConeAngle = 90f;
+    public float eyeHeight;
 
     public ScheduleItem sleep; //Location of bed and sleeping hours, unlike other ScheduleItems endTime should be BEFORE startTime
 
@@ -74,7 +75,11 @@ public class AIAgentBase : MonoBehaviour
     {
         float time = GameTime.TimeOfDay();
 
-        if(panicLevel >= MaxPanicLevel)
+        if(fearLevel >= maxFearLevel)
+        {
+            LeaveHouse();
+        }
+        else if(panicLevel >= MaxPanicLevel)
         {
             Panic();
         }
@@ -109,6 +114,11 @@ public class AIAgentBase : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void LeaveHouse()
+    {
+        agent.SetDestination(exitLocation.transform.position);
     }
 
     private IEnumerator Investigate()
@@ -167,12 +177,13 @@ public class AIAgentBase : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        CheckHearing(other);
+        //CheckHearing(other);
     }
 
     void OnTriggerStay(Collider other)
     {
         CheckSight(other);
+        CheckHearing(other);
     }
 
     /// <summary>
@@ -185,17 +196,17 @@ public class AIAgentBase : MonoBehaviour
         {
             if (interactable.spookey)
             {
-                Vector3 direction = other.transform.position - transform.position;
+                Vector3 eyePosition = transform.position + new Vector3(0f, eyeHeight, 0f);
+                Vector3 direction = other.transform.position - eyePosition;
                 float angle = Vector3.Angle(transform.forward, direction);
                 if (angle < viewConeAngle / 2f)
                 {
-                    Debug.DrawRay(transform.position, direction, Color.red);
-
                     RaycastHit hit;
-                    Ray toObject = new Ray(transform.position, direction);
+                    Ray toObject = new Ray(eyePosition, direction);
                     Physics.Raycast(toObject, out hit);
                     if (hit.transform.tag == Tags.interactable)
                     {
+                        Debug.DrawRay(eyePosition, direction, Color.red);
                         ScareAgent(interactable);
                         return;
                     }
@@ -207,9 +218,26 @@ public class AIAgentBase : MonoBehaviour
     /// <summary>
     /// Check if the player is within hearing range of any possessed object
     /// </summary>
-    private void CheckHearing(Collision other)
+    private void CheckHearing(Collider other)
     {
+        InteractableObject interactable;
+        if (interactable = other.transform.GetComponent<InteractableObject>())
+        {
+            if (interactable.spookey)
+            {
+                Vector3 direction = other.transform.position - transform.position;
 
+                RaycastHit hit;
+                Ray toObject = new Ray(transform.position, direction);
+                Physics.Raycast(toObject, out hit);
+                if (hit.transform.tag == Tags.interactable)
+                {
+                    Debug.DrawRay(transform.position, direction, Color.green);
+                    ScareAgent(interactable);
+                    return;
+                }
+            }
+        }
     }
 
     private void ScareAgent(InteractableObject hauntedObject)
@@ -219,7 +247,20 @@ public class AIAgentBase : MonoBehaviour
         panicLevel += addedFear;
         player.GetComponent<Interaction>().influence += addedFear;
         spooked = true;
-        transform.LookAt(hauntedObject.transform);
-        transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
+        if(panicLevel < MaxPanicLevel)
+        {
+            LookAt(hauntedObject.transform.position);
+        }
+    }
+
+    /// <summary>
+    /// Gradually rotates agent on the y axis to look towards position
+    /// </summary>
+    private void LookAt(Vector3 position)
+    {
+        Quaternion oldRotation = transform.rotation;
+        transform.LookAt(position);
+        Quaternion desiredRot = Quaternion.Euler(new Vector3(0f, transform.eulerAngles.y, 0f));
+        transform.rotation = Quaternion.Slerp(oldRotation, desiredRot, 0.2f);
     }
 }

@@ -63,7 +63,7 @@ public class InteractableObject : MonoBehaviour
     {
         if(Time.time - lastActivationTime > timeout)
         {
-            Debug.Log("Actibated the base class interaction! Maybe you forgot to implement an override for your behavior?");
+            Debug.Log("Activated the base class interaction! Maybe you forgot to implement an override for your behavior?");
             lastActivationTime = Time.time;
         }
         return false;

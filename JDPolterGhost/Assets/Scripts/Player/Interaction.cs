@@ -73,12 +73,15 @@ public class Interaction : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.tag == Tags.interactable)
+        if(other.isTrigger == false)
         {
-            targetedInteractible = other.GetComponent<InteractableObject>();
-            //TODO: Trigger a graphical effect for the highlighted object
+            if (other.tag == Tags.interactable)
+            {
+                targetedInteractible = other.GetComponent<InteractableObject>();
+                //TODO: Trigger a graphical effect for the highlighted object
+            }
         }
     }
 

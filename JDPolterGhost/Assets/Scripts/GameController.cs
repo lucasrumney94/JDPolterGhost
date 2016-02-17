@@ -21,7 +21,8 @@ public class GameController : MonoBehaviour
         }
         if(dadScaredOff && momScaredOff)
         {
-            //game won
+            //wait some time, then game is won
+            Debug.Log("You won the Game!");
         }
     }
 }
