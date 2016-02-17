@@ -485,6 +485,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 102682, guid: 34e9fbfa7b017a34489d22377648911e, type: 2}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34e9fbfa7b017a34489d22377648911e, type: 2}
   m_IsPrefabParent: 0
@@ -552,6 +556,39 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 143978, guid: 34e9fbfa7b017a34489d22377648911e, type: 2}
   m_PrefabInternal: {fileID: 833051674}
+--- !u!114 &833051736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833051681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f677b3b4c8595459bc1e01e5055151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  haunted: 0
+  spookey: 0
+  spookiness: 50
+  influenceCost: 1
+  influenceGate: 0
+  timeout: 0.1
+  hauntingCameraDistance: 2
+  lastActivationTime: 0
+  rattleIntensity: 0.5
+  initialPosition: {x: 0, y: 0, z: 0}
+--- !u!65 &833051737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833051681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 600, y: 400, z: 200}
+  m_Center: {x: 0, y: 200, z: -50}
 --- !u!1001 &900955070
 Prefab:
   m_ObjectHideFlags: 0
