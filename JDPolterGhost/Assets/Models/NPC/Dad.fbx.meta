@@ -12,6 +12,22 @@ ModelImporter:
     100008: head
     100010: legL
     100012: legR
+    100014: Background
+    100016: body
+    100018: Cube
+    100020: Cube_2
+    100022: Cube_3
+    100024: Cube_3_2
+    100026: Cylinder
+    100028: Dad
+    100030: Disc
+    100032: Head
+    100034: Head_2
+    100036: Nose
+    100038: Null
+    100040: shirt
+    100042: Subdivision_Surface
+    100044: Watch
     400000: armL
     400002: armR
     400004: //RootNode
@@ -19,24 +35,64 @@ ModelImporter:
     400008: head
     400010: legL
     400012: legR
+    400014: Background
+    400016: body
+    400018: Cube
+    400020: Cube_2
+    400022: Cube_3
+    400024: Cube_3_2
+    400026: Cylinder
+    400028: Dad
+    400030: Disc
+    400032: Head
+    400034: Head_2
+    400036: Nose
+    400038: Null
+    400040: shirt
+    400042: Subdivision_Surface
+    400044: Watch
     2300000: armL
     2300002: armR
     2300004: dadBody
     2300006: head
     2300008: legL
     2300010: legR
+    2300012: Cube
+    2300014: Cube_2
+    2300016: Cube_3
+    2300018: Cube_3_2
+    2300020: Cylinder
+    2300022: Disc
+    2300024: Head_2
+    2300026: Watch
     3300000: armL
     3300002: armR
     3300004: dadBody
     3300006: head
     3300008: legL
     3300010: legR
+    3300012: Cube
+    3300014: Cube_2
+    3300016: Cube_3
+    3300018: Cube_3_2
+    3300020: Cylinder
+    3300022: Disc
+    3300024: Head_2
+    3300026: Watch
     4300000: dadBody
     4300002: armL
     4300004: armR
     4300006: legL
     4300008: legR
     4300010: head
+    4300012: Cube
+    4300014: Head_2
+    4300016: Disc
+    4300018: Watch
+    4300020: Cylinder
+    4300022: Cube_3
+    4300024: Cube_2
+    4300026: Cube_3_2
     7400000: frightened
     9500000: //RootNode
     11100000: //RootNode
