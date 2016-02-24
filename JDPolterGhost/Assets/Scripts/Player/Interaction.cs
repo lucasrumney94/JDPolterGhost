@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -16,7 +16,8 @@ public class Interaction : MonoBehaviour
     private PlayerCamera playerCamera;
     private Collider playerCollider;
 
-    private MeshRenderer playerMesh;
+    // private MeshRenderer playerMesh;            //disabled because player is now a particle system
+    private ParticleSystem playerParticleSystem;
     private PlayerMovement playerMovement;
     private NavMeshObstacle playerObstacle;
 
@@ -26,7 +27,8 @@ public class Interaction : MonoBehaviour
     {
         playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
         playerCollider = GetComponent<Collider>();
-        playerMesh = GetComponent<MeshRenderer>();
+        playerParticleSystem = GetComponent<ParticleSystem>();
+        //playerMesh = GetComponent<MeshRenderer>();            //disabled because player is now a particle system
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -46,7 +48,8 @@ public class Interaction : MonoBehaviour
                     Debug.Log(targetedInteractible.gameObject.name + " was interacted with!");
                     hauntingObject = true;
                     targetedInteractible.haunted = true;
-                    playerMesh.enabled = false;
+                    playerParticleSystem.enableEmission = false;
+                    //playerMesh.enabled = false;            //disabled because player is now a particle system
                     transform.position = targetedInteractible.transform.position;
                 }
             }
@@ -54,7 +57,8 @@ public class Interaction : MonoBehaviour
             {
                 hauntingObject = false;
                 targetedInteractible.haunted = false;
-                playerMesh.enabled = true;
+                playerParticleSystem.enableEmission = true;
+                //playerMesh.enabled = true;            //disabled because player is now a particle system
             }
         }
     }
