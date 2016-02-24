@@ -25,10 +25,14 @@ public class InputManager : MonoBehaviour
     public string interact1 = "Interact1";
     public string activate1 = "Activate1";
 
+    public string pause = "Pause";
+
     public bool interact1Held = false;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         player = GameObject.FindGameObjectWithTag(Tags.player);
         playerCamera = GameObject.FindGameObjectWithTag(Tags.camera).GetComponent<PlayerCamera>();
         playerMovement = player.GetComponent<PlayerMovement>();
@@ -46,6 +50,7 @@ public class InputManager : MonoBehaviour
         MoveCamera();
         Interact();
         Activate();
+        Pause();
     }
 
     private void Moveplayer()
@@ -108,5 +113,22 @@ public class InputManager : MonoBehaviour
         {
             playerInteraction.ActivateTarget();
         }
+    }
+
+    private void Pause()
+    {
+        //float pauseValue = Input.GetAxis(pause);
+        if(Input.GetButtonDown(pause))
+        {
+            SwitchMouseLock();
+        }
+    }
+
+    private void SwitchMouseLock()
+    {
+        if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
+        else if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
+
+        Cursor.visible = !Cursor.visible;
     }
 }
