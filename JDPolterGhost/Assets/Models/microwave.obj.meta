@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 61c864fe41d434dc2872d00a1931b235
+timeCreated: 1456205667
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Boole_Cube1
+    100002: Boole_Cube_11
+    100004: //RootNode
+    100006: Null_Boole_1_Cube
+    100008: Null_Boole_1_Cube_1
+    100010: Null_button
+    100012: Null_buttons_button_0
+    100014: Null_buttons_button_1
+    100016: Null_buttons_button_2
+    100018: Null_buttons_button_3
+    100020: Null_buttons_button_4
+    100022: Null_buttons_button_5
+    100024: Null_buttons_button_6
+    100026: Null_buttons_button_7
+    100028: Null_buttons_button_8
+    100030: Null_Plane1
+    100032: Plane
+    100034: Soor
+    400000: Boole_Cube1
+    400002: Boole_Cube_11
+    400004: //RootNode
+    400006: Null_Boole_1_Cube
+    400008: Null_Boole_1_Cube_1
+    400010: Null_button
+    400012: Null_buttons_button_0
+    400014: Null_buttons_button_1
+    400016: Null_buttons_button_2
+    400018: Null_buttons_button_3
+    400020: Null_buttons_button_4
+    400022: Null_buttons_button_5
+    400024: Null_buttons_button_6
+    400026: Null_buttons_button_7
+    400028: Null_buttons_button_8
+    400030: Null_Plane1
+    400032: Plane
+    400034: Soor
+    2300000: Boole_Cube1
+    2300002: Boole_Cube_11
+    2300004: Null_Boole_1_Cube
+    2300006: Null_Boole_1_Cube_1
+    2300008: Null_button
+    2300010: Null_buttons_button_0
+    2300012: Null_buttons_button_1
+    2300014: Null_buttons_button_2
+    2300016: Null_buttons_button_3
+    2300018: Null_buttons_button_4
+    2300020: Null_buttons_button_5
+    2300022: Null_buttons_button_6
+    2300024: Null_buttons_button_7
+    2300026: Null_buttons_button_8
+    2300028: Null_Plane1
+    2300030: Plane
+    2300032: Soor
+    3300000: Boole_Cube1
+    3300002: Boole_Cube_11
+    3300004: Null_Boole_1_Cube
+    3300006: Null_Boole_1_Cube_1
+    3300008: Null_button
+    3300010: Null_buttons_button_0
+    3300012: Null_buttons_button_1
+    3300014: Null_buttons_button_2
+    3300016: Null_buttons_button_3
+    3300018: Null_buttons_button_4
+    3300020: Null_buttons_button_5
+    3300022: Null_buttons_button_6
+    3300024: Null_buttons_button_7
+    3300026: Null_buttons_button_8
+    3300028: Null_Plane1
+    3300030: Plane
+    3300032: Soor
+    4300000: Boole_Cube1
+    4300002: Boole_Cube_11
+    4300004: Null_Boole_1_Cube
+    4300006: Null_Boole_1_Cube_1
+    4300008: Null_button
+    4300010: Null_buttons_button_0
+    4300012: Null_buttons_button_1
+    4300014: Null_buttons_button_2
+    4300016: Null_buttons_button_3
+    4300018: Null_buttons_button_4
+    4300020: Null_buttons_button_5
+    4300022: Null_buttons_button_6
+    4300024: Null_buttons_button_7
+    4300026: Null_buttons_button_8
+    4300028: Null_Plane1
+    4300030: Plane
+    4300032: Soor
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

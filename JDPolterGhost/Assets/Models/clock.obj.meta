@@ -1,27 +1,37 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: a507b80b24e0a4f51855670b2ba11928
+timeCreated: 1455938238
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
-    400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    100000: //RootNode
+    100002: Clock_Big_Hand
+    100004: Clock_ClockBody
+    100006: Clock_ClockFace
+    100008: Clock_Second_Hand
+    100010: Clock_Short_Hand
+    400000: //RootNode
+    400002: Clock_Big_Hand
+    400004: Clock_ClockBody
+    400006: Clock_ClockFace
+    400008: Clock_Second_Hand
+    400010: Clock_Short_Hand
+    2300000: Clock_Big_Hand
+    2300002: Clock_ClockBody
+    2300004: Clock_ClockFace
+    2300006: Clock_Second_Hand
+    2300008: Clock_Short_Hand
+    3300000: Clock_Big_Hand
+    3300002: Clock_ClockBody
+    3300004: Clock_ClockFace
+    3300006: Clock_Second_Hand
+    3300008: Clock_Short_Hand
+    4300000: Clock_Big_Hand
+    4300002: Clock_ClockBody
+    4300004: Clock_ClockFace
+    4300006: Clock_Second_Hand
+    4300008: Clock_Short_Hand
   materials:
     importMaterials: 1
     materialName: 0

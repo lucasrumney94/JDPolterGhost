@@ -1,27 +1,62 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: 3abaf261131db47669ddb61b0fb060fc
+timeCreated: 1456084468
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
-    400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    100000: Boole_Cube2
+    100002: Boole_Hole
+    100004: Boole_Hole_Cube3
+    100006: Freezer_Door_Cube_1
+    100008: Freezer_Door_Subdivision_Surface_Cube1
+    100010: //RootNode
+    100012: Fridge_Door_Cube_2
+    100014: Fridge_Door_Subdivision_Surface_1_Cube
+    100016: shelf
+    100018: shelf_1
+    100020: shelf_2
+    400000: Boole_Cube2
+    400002: Boole_Hole
+    400004: Boole_Hole_Cube3
+    400006: Freezer_Door_Cube_1
+    400008: Freezer_Door_Subdivision_Surface_Cube1
+    400010: //RootNode
+    400012: Fridge_Door_Cube_2
+    400014: Fridge_Door_Subdivision_Surface_1_Cube
+    400016: shelf
+    400018: shelf_1
+    400020: shelf_2
+    2300000: Boole_Cube2
+    2300002: Boole_Hole
+    2300004: Boole_Hole_Cube3
+    2300006: Freezer_Door_Cube_1
+    2300008: Freezer_Door_Subdivision_Surface_Cube1
+    2300010: Fridge_Door_Cube_2
+    2300012: Fridge_Door_Subdivision_Surface_1_Cube
+    2300014: shelf
+    2300016: shelf_1
+    2300018: shelf_2
+    3300000: Boole_Cube2
+    3300002: Boole_Hole
+    3300004: Boole_Hole_Cube3
+    3300006: Freezer_Door_Cube_1
+    3300008: Freezer_Door_Subdivision_Surface_Cube1
+    3300010: Fridge_Door_Cube_2
+    3300012: Fridge_Door_Subdivision_Surface_1_Cube
+    3300014: shelf
+    3300016: shelf_1
+    3300018: shelf_2
+    4300000: Boole_Cube2
+    4300002: Boole_Hole
+    4300004: Boole_Hole_Cube3
+    4300006: Freezer_Door_Cube_1
+    4300008: Freezer_Door_Subdivision_Surface_Cube1
+    4300010: Fridge_Door_Cube_2
+    4300012: Fridge_Door_Subdivision_Surface_1_Cube
+    4300014: shelf
+    4300016: shelf_1
+    4300018: shelf_2
   materials:
     importMaterials: 1
     materialName: 0

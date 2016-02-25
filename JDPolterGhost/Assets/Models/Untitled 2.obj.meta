@@ -1,27 +1,17 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: e624daec9413a48e0bbd239fb652d20f
+timeCreated: 1456278475
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
+    100000: Cylinder_Cylinder1
     100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
+    400000: Cylinder_Cylinder1
     400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    2300000: Cylinder_Cylinder1
+    3300000: Cylinder_Cylinder1
+    4300000: Cylinder_Cylinder1
   materials:
     importMaterials: 1
     materialName: 0

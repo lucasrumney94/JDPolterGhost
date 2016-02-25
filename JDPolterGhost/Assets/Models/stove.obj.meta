@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: cfb3235e03a984b489fd27be214a87cb
+timeCreated: 1456083327
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cloner_Disc_0
+    100002: Cloner_Disc_1
+    100004: Cloner_Disc_2
+    100006: Cloner_Disc_3
+    100008: knob
+    100010: knob_1
+    100012: knob_1_Cube1
+    100014: knob_2
+    100016: knob_2_Cube
+    100018: knob_Cube2
+    100020: Null_Boole_Cube5
+    100022: Null_Boole_Cube_1
+    100024: Null_Door_Cube4
+    100026: Null_Door_hole
+    100028: screen
+    100030: //RootNode
+    100032: Subdivision_Surface_Cube3
+    100034: window
+    100036: Door_Door1_Cube5
+    100038: Door_Door1_hole
+    100040: Door_Subdivision_Surface_Cube4
+    100042: Door_window
+    100044: Null_Boole_Cube3
+    400000: Cloner_Disc_0
+    400002: Cloner_Disc_1
+    400004: Cloner_Disc_2
+    400006: Cloner_Disc_3
+    400008: knob
+    400010: knob_1
+    400012: knob_1_Cube1
+    400014: knob_2
+    400016: knob_2_Cube
+    400018: knob_Cube2
+    400020: Null_Boole_Cube5
+    400022: Null_Boole_Cube_1
+    400024: Null_Door_Cube4
+    400026: Null_Door_hole
+    400028: screen
+    400030: //RootNode
+    400032: Subdivision_Surface_Cube3
+    400034: window
+    400036: Door_Door1_Cube5
+    400038: Door_Door1_hole
+    400040: Door_Subdivision_Surface_Cube4
+    400042: Door_window
+    400044: Null_Boole_Cube3
+    2300000: Cloner_Disc_0
+    2300002: Cloner_Disc_1
+    2300004: Cloner_Disc_2
+    2300006: Cloner_Disc_3
+    2300008: knob
+    2300010: knob_1
+    2300012: knob_1_Cube1
+    2300014: knob_2
+    2300016: knob_2_Cube
+    2300018: knob_Cube2
+    2300020: Null_Boole_Cube5
+    2300022: Null_Boole_Cube_1
+    2300024: Null_Door_Cube4
+    2300026: Null_Door_hole
+    2300028: screen
+    2300030: Subdivision_Surface_Cube3
+    2300032: window
+    2300034: Door_Door1_Cube5
+    2300036: Door_Door1_hole
+    2300038: Door_Subdivision_Surface_Cube4
+    2300040: Door_window
+    2300042: Null_Boole_Cube3
+    3300000: Cloner_Disc_0
+    3300002: Cloner_Disc_1
+    3300004: Cloner_Disc_2
+    3300006: Cloner_Disc_3
+    3300008: knob
+    3300010: knob_1
+    3300012: knob_1_Cube1
+    3300014: knob_2
+    3300016: knob_2_Cube
+    3300018: knob_Cube2
+    3300020: Null_Boole_Cube5
+    3300022: Null_Boole_Cube_1
+    3300024: Null_Door_Cube4
+    3300026: Null_Door_hole
+    3300028: screen
+    3300030: Subdivision_Surface_Cube3
+    3300032: window
+    3300034: Door_Door1_Cube5
+    3300036: Door_Door1_hole
+    3300038: Door_Subdivision_Surface_Cube4
+    3300040: Door_window
+    3300042: Null_Boole_Cube3
+    4300000: Cloner_Disc_0
+    4300002: Cloner_Disc_1
+    4300004: Cloner_Disc_2
+    4300006: Cloner_Disc_3
+    4300008: knob
+    4300010: knob_1
+    4300012: knob_1_Cube1
+    4300014: knob_2
+    4300016: knob_2_Cube
+    4300018: knob_Cube2
+    4300020: Null_Boole_Cube5
+    4300022: Null_Boole_Cube_1
+    4300024: Null_Door_Cube4
+    4300026: Null_Door_hole
+    4300028: screen
+    4300030: Subdivision_Surface_Cube3
+    4300032: window
+    4300034: Door_Door1_Cube5
+    4300036: Door_Door1_hole
+    4300038: Door_Subdivision_Surface_Cube4
+    4300040: Door_window
+    4300042: Null_Boole_Cube3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

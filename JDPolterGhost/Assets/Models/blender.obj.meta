@@ -1,27 +1,42 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: 7628c1e2a50284169b83c50fd76b1886
+timeCreated: 1456206351
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
-    400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    100000: //RootNode
+    100002: Blender_base_1
+    100004: Blender_cup
+    100006: Blender_Cylinder_1
+    100008: Blender_Cylinder_2
+    100010: Blender_Cylinder_3
+    100012: Blender_Lid
+    400000: //RootNode
+    400002: Blender_base_1
+    400004: Blender_cup
+    400006: Blender_Cylinder_1
+    400008: Blender_Cylinder_2
+    400010: Blender_Cylinder_3
+    400012: Blender_Lid
+    2300000: Blender_base_1
+    2300002: Blender_cup
+    2300004: Blender_Cylinder_1
+    2300006: Blender_Cylinder_2
+    2300008: Blender_Cylinder_3
+    2300010: Blender_Lid
+    3300000: Blender_base_1
+    3300002: Blender_cup
+    3300004: Blender_Cylinder_1
+    3300006: Blender_Cylinder_2
+    3300008: Blender_Cylinder_3
+    3300010: Blender_Lid
+    4300000: Blender_base_1
+    4300002: Blender_cup
+    4300004: Blender_Cylinder_1
+    4300006: Blender_Cylinder_2
+    4300008: Blender_Cylinder_3
+    4300010: Blender_Lid
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,27 +1,37 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: 737a60a92bf7a41a888548393e9bc605
+timeCreated: 1456080953
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
-    400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    100000: //RootNode
+    100002: Cabinet_Body_box
+    100004: Cabinet_Body_SHELF
+    100006: Cabinet_Door
+    100008: Cabinet_Body_inside
+    100010: Cabinet_Body_inside_1
+    400000: //RootNode
+    400002: Cabinet_Body_box
+    400004: Cabinet_Body_SHELF
+    400006: Cabinet_Door
+    400008: Cabinet_Body_inside
+    400010: Cabinet_Body_inside_1
+    2300000: Cabinet_Body_box
+    2300002: Cabinet_Body_SHELF
+    2300004: Cabinet_Door
+    2300006: Cabinet_Body_inside
+    2300008: Cabinet_Body_inside_1
+    3300000: Cabinet_Body_box
+    3300002: Cabinet_Body_SHELF
+    3300004: Cabinet_Door
+    3300006: Cabinet_Body_inside
+    3300008: Cabinet_Body_inside_1
+    4300000: Cabinet_Body_box
+    4300002: Cabinet_Body_SHELF
+    4300004: Cabinet_Door
+    4300006: Cabinet_Body_inside
+    4300008: Cabinet_Body_inside_1
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,27 +1,32 @@
 fileFormatVersion: 2
-guid: f445e691eead34a7290a7310be742209
-timeCreated: 1454705690
+guid: 7a37093990ea74b41b242ad3a2aa1965
+timeCreated: 1455937286
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: Lamp_body
-    100006: Lamp_shade
-    400000: default
-    400002: //RootNode
-    400004: Lamp_body
-    400006: Lamp_shade
-    2300000: default
-    2300002: Lamp_body
-    2300004: Lamp_shade
-    3300000: default
-    3300002: Lamp_body
-    3300004: Lamp_shade
-    4300000: default
-    4300002: Lamp_body
-    4300004: Lamp_shade
+    100000: //RootNode
+    100002: LightSwitch_Base
+    100004: LightSwitch_Flip
+    100006: Light_Switch_Base_1
+    100008: Light_Switch_Flip
+    400000: //RootNode
+    400002: LightSwitch_Base
+    400004: LightSwitch_Flip
+    400006: Light_Switch_Base_1
+    400008: Light_Switch_Flip
+    2300000: LightSwitch_Base
+    2300002: LightSwitch_Flip
+    2300004: Light_Switch_Base_1
+    2300006: Light_Switch_Flip
+    3300000: LightSwitch_Base
+    3300002: LightSwitch_Flip
+    3300004: Light_Switch_Base_1
+    3300006: Light_Switch_Flip
+    4300000: LightSwitch_Base
+    4300002: LightSwitch_Flip
+    4300004: Light_Switch_Base_1
+    4300006: Light_Switch_Flip
   materials:
     importMaterials: 1
     materialName: 0
