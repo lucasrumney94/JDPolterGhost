@@ -107,13 +107,10 @@ Material:
         second: 0.5
       data:
         first:
-<<<<<<< HEAD
-=======
           name: _Parallax
         second: 0.02
       data:
         first:
->>>>>>> aaee9b80ed9a964a19b502837c244176037ef069
           name: _ZWrite
         second: 1
       data:
