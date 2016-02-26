@@ -4,7 +4,9 @@ using System;
 
 public class PlayerCamera : MonoBehaviour
 {
-    public float cameraDistance; //Radius of camera movement sphere
+    public float defaultCameraDistance;
+    public float targetCameraDistance;
+    private float cameraDistance; //Radius of camera movement sphere
 
     public float currentLongitude = 0;
     private float targetLongitude;
@@ -14,6 +16,8 @@ public class PlayerCamera : MonoBehaviour
 
     public float verticalAngleLimit = 80f;
 
+    public float cameraSpeed = 1f; //How fast will the camera move into position?
+
     public Vector3 anchorDistance; //Distance of the camera center of rotation from the player
 
     private GameObject player;
@@ -21,6 +25,19 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.player);
+        cameraDistance = defaultCameraDistance;
+        targetCameraDistance = defaultCameraDistance;
+    }
+
+    void Update()
+    {
+        LerpCameraToPosition();
+    }
+
+    private void LerpCameraToPosition()
+    {
+        //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * cameraSpeed);
+        cameraDistance = Mathf.Lerp(cameraDistance, targetCameraDistance, Time.deltaTime * cameraSpeed);
     }
 
 	public void MoveCamera(Vector3 cameraDelta)

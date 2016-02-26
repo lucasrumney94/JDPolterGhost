@@ -48,7 +48,9 @@ public class Interaction : MonoBehaviour
                     Debug.Log(targetedInteractible.gameObject.name + " was interacted with!");
                     hauntingObject = true;
                     targetedInteractible.haunted = true;
-                    playerParticleSystem.enableEmission = false;
+                    ParticleSystem.EmissionModule emission = playerParticleSystem.emission;
+                    emission.enabled = false;
+                    SetCameraTargetDistance(targetedInteractible.hauntingCameraDistance);
                     //playerMesh.enabled = false;            //disabled because player is now a particle system
                     transform.position = targetedInteractible.transform.position;
                 }
@@ -57,7 +59,9 @@ public class Interaction : MonoBehaviour
             {
                 hauntingObject = false;
                 targetedInteractible.haunted = false;
-                playerParticleSystem.enableEmission = true;
+                ParticleSystem.EmissionModule emission = playerParticleSystem.emission;
+                emission.enabled = true;
+                SetCameraTargetDistance(playerCamera.defaultCameraDistance);
                 //playerMesh.enabled = true;            //disabled because player is now a particle system
             }
         }
@@ -98,5 +102,10 @@ public class Interaction : MonoBehaviour
                 targetedInteractible = null;
             }
         }
+    }
+
+    private void SetCameraTargetDistance(float targetDistance)
+    {
+        playerCamera.targetCameraDistance = targetDistance;
     }
 }
