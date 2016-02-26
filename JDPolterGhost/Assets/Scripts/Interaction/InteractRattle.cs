@@ -3,13 +3,25 @@ using System.Collections;
 
 public class InteractRattle : InteractableObject
 {
-    public float rattleIntensity = 0.1f;
+    public float rattleSpeed;
+    public Vector3 rattleRange;
 
     public Vector3 initialPosition;
+
+    private bool moving = false;
+    private Vector3 targetPosition;
 
     void Start()
     {
         initialPosition = transform.position;
+    }
+
+    void Update()
+    {
+        if (moving)
+        {
+            LerpToPosition();
+        }
     }
 
     public override bool Activate()
@@ -26,14 +38,24 @@ public class InteractRattle : InteractableObject
     private IEnumerator Rattle()
     {
         spookey = true;
-        Vector3 offset = new Vector3(Random.Range(-rattleIntensity, rattleIntensity), Random.Range(-rattleIntensity, rattleIntensity), Random.Range(-rattleIntensity, rattleIntensity));
-        transform.position = Vector3.Lerp(transform.position, initialPosition + offset, 0.1f);
+        moving = true;
+        SetTargetPosition();
 
         yield return new WaitForSeconds(timeout);
 
         ResetPosition();
         spookey = false;
         ClearFrightenedAgents();
+    }
+
+    private void SetTargetPosition()
+    {
+        targetPosition = new Vector3(Random.Range(-rattleRange.x, rattleRange.x), Random.Range(-rattleRange.y, rattleRange.y), Random.Range(-rattleRange.z, rattleRange.z));
+    }
+
+    private void LerpToPosition()
+    {
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * rattleSpeed);
     }
 
     private void ResetPosition()
